@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static and Non-Static Methods</title>
+</head>
+<body>
+    <script>
+        class MyClass {
+            constructor(name) {
+                this.name = name;
+            }
+
+            // Non-static method
+            greet() {
+                return `Hello, ${this.name}!`;
+            }
+
+            // Static method
+            static staticGreet() {
+                return 'Hello from static method!';
+            }
+        }
+
+        // Creating an instance of MyClass
+        const myInstance = new MyClass('John');
+
+        // Calling non-static method
+        console.log(myInstance.greet());
+
+        // Calling static method
+        console.log(MyClass.staticGreet());
+    </script>
+</body>
+</html>

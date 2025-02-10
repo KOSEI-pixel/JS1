@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Function Example</title>
+</head>
+<body>
+    <script>
+        async function fetchData(url) {
+            try {
+                let response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                let data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('There has been a problem with your fetch operation:', error);
+            }
+        }
+
+        async function processData() {
+            let url = 'https://api.example.com/data';
+            let data = await fetchData(url);
+            return data;
+        }
+
+        async function handleData() {
+            let data = await processData();
+            if (data) {
+                // Perform operations with the data
+                console.log('Data received:', data);
+                // Example: process the data further
+                let processedData = data.map(item => item.value * 2);
+                console.log('Processed Data:', processedData);
+            }
+        }
+
+        handleData();
+    </script>
+</body>
+</html>

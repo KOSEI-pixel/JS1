@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Mapping and Sorting</title>
+</head>
+<body>
+    <script>
+        // Create an array with numbers
+        const numbers = [5, 3, 8, 1, 2];
+
+        // Map the array (for example, multiply each number by 2)
+        const mappedNumbers = numbers.map(num => num * 2);
+
+        // Sort the mapped array in ascending order
+        const sortedAscending = mappedNumbers.slice().sort((a, b) => a - b);
+
+        // Sort the mapped array in descending order
+        const sortedDescending = mappedNumbers.slice().sort((a, b) => b - a);
+
+        console.log('Original Numbers:', numbers);
+        console.log('Mapped Numbers:', mappedNumbers);
+        console.log('Sorted Ascending:', sortedAscending);
+        console.log('Sorted Descending:', sortedDescending);
+    </script>
+</body>
+</html></html>
